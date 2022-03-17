@@ -3,7 +3,7 @@ secondterraformproject
 
 # USAGE
 
-...hcl
+```hcl
 module "vpcmodule" {
   source = "./vpcmodule"
 
@@ -13,5 +13,4 @@ module "vpcmodule" {
   websubnet_cidr  = [for each in range(1,225,2) : cidrsubnet(var.vpccidr, 8, each)]
   appsubnet_cidr  = [for each in range(0,225,2) : cidrsubnet(var.vpccidr, 8, each)]
 }
-
-...
+```
